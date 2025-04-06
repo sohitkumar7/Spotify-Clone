@@ -44,19 +44,16 @@ export const registerUser = async (req, res) => {
 };
 
 
-
-
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
 
-    console.log("user which logged in", user);
     const ismatch = await bcrypt.compare(password, user.password);
 
     if (!user || !ismatch) {
       return res.status(400).json({
-        error: "Invalid credinsial",
+        messsage: "Invalid credinsial",
       });
     }
 

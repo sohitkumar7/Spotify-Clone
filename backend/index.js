@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import UserRoute from "./Routes/UserRoute.js"
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
-
+import cors from "cors";
 dotenv.config();
 const app = express();
 
@@ -14,7 +14,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // middlewares
 app.use(express.json());
 app.use(cookieParser());
-// app.use(cors());
+app.use(cors());
 
 
 try {
