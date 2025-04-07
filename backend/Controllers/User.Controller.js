@@ -1,4 +1,4 @@
-import generateToken from "../jwt/generateToken.js";
+import generateToken from "../utilis/generateToken.js";
 import { User } from "../models/User.model.js";
 import bcrypt from "bcrypt";
 
