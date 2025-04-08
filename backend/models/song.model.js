@@ -20,11 +20,11 @@ const songSchema = new mongoose.Schema({
     thumbnail:{
         id:{
             type:String,
-            required:true
+            required:false
         },
         url:{
             type:String,
-            required:true
+            required:false
         }
     },
 
