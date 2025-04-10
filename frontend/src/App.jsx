@@ -6,6 +6,7 @@ import Register from "./pages/Register.jsx";
 import { Toaster } from "react-hot-toast";
 import { useAuth } from "./Context/Authprovider.jsx";
 import Admin from "./pages/Admin.jsx";
+import Playlist from "./pages/Playlist.jsx";
 function App() {
 
   const [authUser] = useAuth();
@@ -16,6 +17,11 @@ function App() {
         <Route path="/" element={
           authUser ? (
           <Home/>
+          ): (<Navigate to = {"/login"}/>)
+          }/>
+        <Route path="/playlist" element={
+          authUser ? (
+          <Playlist/>
           ): (<Navigate to = {"/login"}/>)
           }/>
         <Route path="/admin" element={

@@ -103,7 +103,7 @@ export const logout = async(req,res) =>{
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            error: "Error in logout Controller "
+            message: "Error in logout Controller "
         })
     }
 

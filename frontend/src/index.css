@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 body{
+    font-family: "poppins ,sans-serif";
     @apply bg-black;
 }
 .auth-input{
@@ -10,4 +12,17 @@ body{
 
 .auth-btn{
     @apply w-full bg-green-500 hover:bg-green-400 text-black font-semibold p-3 rounded-full
+}
+
+*::-webkit-scrollbar{
+    height: 0.5rem;
+    width: 0.1rem;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: #2e2d2b;
 }

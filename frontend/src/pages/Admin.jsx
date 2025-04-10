@@ -18,6 +18,7 @@ function Admin() {
   const [file,setfile] = useState();
   const [album,setalbum] = useState("");
 
+  
   const fileChangeHandle = (e)=>{
     console.log(e.target.files)
     const file = e.target.files[0];
@@ -70,6 +71,9 @@ const deleteHandler = (id) => {
 
   return (
     <div className="min-h-screen bg[#212121] text-white p-8">
+      
+      {/* link to go to home page */}
+
       <Link
         to="/"
         className="bg-green-500 text-white font-bold 
@@ -77,7 +81,8 @@ const deleteHandler = (id) => {
       >
         Go to Home page
       </Link>
-
+    
+    {/* First for to add Album */}
       <h2 className="text-2xl font-bold mb-6 mt-6">Add Album</h2>
       <form  onSubmit={addAlbumHandler} className="bg-[#181818] p-6 rounded-lg shadow-lg ">
         
@@ -123,29 +128,7 @@ const deleteHandler = (id) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      {/* Second Form to add Song */}
       <h2 className="text-2xl font-bold mb-6 mt-6">Add Song</h2>
       <form onSubmit={addSongHandler} className="bg-[#181818] p-6 rounded-lg shadow-lg ">
         
@@ -211,6 +194,9 @@ const deleteHandler = (id) => {
 
         </form>
         
+
+        {/* div that show all added songs */}
+
         <div className="mt-8">
           <h3 className=" text-xl font-semibold mb-4">Added Songs</h3>
           <div className="flex justify-center md:justify-start gap-2 items-center flex-wrap">
