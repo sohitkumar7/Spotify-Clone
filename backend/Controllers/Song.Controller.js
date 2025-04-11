@@ -162,3 +162,12 @@ export const deleteSong = async(req,res) => {
         console.log(error);
     }
 }
+
+export const getSingleSong = async(req,res) => {
+    try {
+        const song = await Song.findById(req.params.id);
+        res.json(song);
+    } catch (error) {
+        res.json(error);
+    }
+  }

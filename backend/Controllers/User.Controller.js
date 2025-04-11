@@ -108,3 +108,37 @@ export const logout = async(req,res) =>{
     }
 
 }
+
+export const SavetoPlaylist = async(req,res)=>{
+  try {
+  
+    const user = req.user;
+
+    if(user.playlist.includes(req.params.id)){
+      const index = user.playlist.indexOf(req.params.id)
+
+      user.playlist.splice(index,1)
+      await user.save();
+
+      return res.json({
+        message: "Remove from Playlist"
+      })
+    }
+
+    user.playlist.push(req.params.id);
+
+    await user.save();
+
+    return res.json({
+      message:"Added to Playlist"
+    })
+  
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      message:"error in savetoplaylist controller"
+    })
+  }
+}
+
+

@@ -1,7 +1,7 @@
  import express from "express";
 import { isAuth } from "../middleware/isAuth.js";
 import uploadFile from "../middleware/multer.js";
-import {addSong, addThumbnail, createAlbum, deleteSong, getAllAblums, getAllSongs, getALLSongsbyAlbum} from "../Controllers/Song.Controller.js"
+import {addSong, addThumbnail, createAlbum, deleteSong, getAllAblums, getAllSongs, getALLSongsbyAlbum, getSingleSong} from "../Controllers/Song.Controller.js"
 
 const router = express.Router();
 
@@ -12,6 +12,7 @@ router.post("/:id",isAuth,uploadFile,addThumbnail);
 router.delete("/:id",isAuth,deleteSong);
 router.get("/all",isAuth,getAllSongs);
 router.get("/album/:id",isAuth,getALLSongsbyAlbum);
+router.get("/single/:id",isAuth,getSingleSong);
 
 export default router;
 
