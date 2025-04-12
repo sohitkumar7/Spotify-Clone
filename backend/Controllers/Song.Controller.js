@@ -140,9 +140,9 @@ export const getAllSongs = async(req,res) => {
 export const getALLSongsbyAlbum = async(req,res) => {
     try {
         const album = await Album.findById(req.params.id)
-        const songs = await Song.find({album:req.params.id})
+        const Songs = await Song.find({album:req.params.id})
         
-        res.json({album,songs});
+        res.json({album,Songs});
 
     } catch (error) {
         console.log("Error in getallmessagebyAlbum : ",error)

@@ -129,6 +129,21 @@ export const SongProvider = ({ children }) => {
     }
   }
 
+  const [albumSong,setalbumSong] = useState([]);
+  const [albumdata,setalbumdata] = useState([]);
+
+  async function fetchAlbumSong(id){
+    try {
+      const {data} = await axios.get("/api/song/album/"+id)
+      // console.log("fetchalbumSongs",data);
+      setalbumSong(data.Songs);
+      setalbumdata(data.album);
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     fetchAlbums();
     fetchSongs();
@@ -153,6 +168,10 @@ export const SongProvider = ({ children }) => {
         addthumbnail,
         addsong,
         songs,
+        fetchAlbumSong,
+        albumSong,
+        setalbumSong,
+        albumdata
       }}
     >
       {children}
